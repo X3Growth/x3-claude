@@ -29,6 +29,9 @@ Never write X3 code from memory. Before each phase, read the relevant guide.
      they are maintained with the product and override anything in this skill.
    - The MCP prompts with the same names (`install`, `events`, `server_conversions`,
      `connection_test`, `debug_tracking`, `preset_from_website`) render the same text without a project.
+   - Only the public docs server `x3-docs` (`<origin>/mcp/public`: `docs_*`, `setup_get_instructions`,
+     `events_validate`, no `setup_status`)? Docs work, project data does not – ask the user to add
+     `<origin>/mcp` (server `x3`) and sign in before Phase A.
 2. **Without MCP**, fetch over HTTPS (default origin `https://api.x3growth.io`; a self-hosted
    deployment uses its own API origin – ask the user):
    - `<origin>/llms.txt` – index of every guide as markdown links; `<origin>/llms-full.txt` – all guides in one file.

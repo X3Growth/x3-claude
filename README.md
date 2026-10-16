@@ -8,7 +8,7 @@ The plugin **`x3`** contains:
 | Part | What it does |
 |---|---|
 | Skill `x3-connect-website` | Lets Claude do the complete job of connecting a website to X3: pick or create the project, install the SDK or script tag in your codebase (Next.js, React, Astro, plain HTML, WordPress, Shopify, Webflow, Google Tag Manager, …), wire your cookie banner/CMP, track forms, bookings, WhatsApp/phone/mail clicks, quizzes, CTAs and videos, add server-side lead and conversion calls, verify that data arrives, and set up goals, conversions and presets. Connecting Meta/Google ad accounts or operating the dashboard happens **only when you explicitly ask**. |
-| MCP server `x3` | `https://api.x3growth.io/mcp` (Streamable HTTP, OAuth sign-in) – the X3 tools, docs and prompts the skill uses. |
+| MCP server `x3` | `https://api.x3growth.io/mcp` (Streamable HTTP, OAuth sign-in on connect – every request needs it) – the X3 tools, docs and prompts the skill uses. |
 
 The skill holds only the workflow, decisions, safety rules and verification steps. All concrete code,
 APIs and options come from the live X3 documentation
@@ -48,7 +48,9 @@ If you already added the X3 server manually (`claude mcp add … x3 …`), remov
 ### Only the X3 connector?
 
 Connector users get the same guidance without installing anything: the X3 MCP server offers the prompt
-**`connect_website`** and the resource `x3://skills/x3-connect-website/SKILL.md`.
+**`connect_website`** and the resource `x3://skills/x3-connect-website/SKILL.md`. Without an X3 account the
+public docs endpoint `https://api.x3growth.io/mcp/public` (server `x3-docs`, no sign-in, no data) serves the
+same prompt, the skill files and the docs tools.
 
 ## Deutsch – Kurzanleitung
 
