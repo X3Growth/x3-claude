@@ -72,6 +72,9 @@ conversions) and before committing code.
   | Shopify | `frameworks/shopify` (theme + customer-events pixel for checkout) |
   | Only Google Tag Manager access, no code access | script tag as a GTM Custom HTML tag – read `sdk/script-tag` and `sdk/csp`; consent via the CMP adapter, not GTM triggers, unless the docs say otherwise |
   | Anything else | `frameworks/other` |
+- npm-built sites install the package from the npm registry: `npm install @x3growth/sdk` (with the
+  repo's package manager: `pnpm add` / `yarn add` / `bun add @x3growth/sdk`). Never install from a
+  `/v1/sdk/*.tgz` URL; an existing tarball install keeps working and may be switched to the registry.
 - Exactly **one** tracker per page. Never mix the script tag/`<X3Analytics>` (`window.x3` calls) with
   `<X3Provider>`/`init()` (ESM imports) on one page. Repair an existing install instead of adding a second.
 - First-party proxy: choose by hosting as the install instructions describe (`proxy/*` guides). The
