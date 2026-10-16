@@ -1,0 +1,19 @@
+{
+  "name": "x3growth",
+  "owner": {
+    "name": "X3 Growth",
+    "url": "https://github.com/X3Growth"
+  },
+  "description": "Claude plugins and skills for X3 Growth Intelligence – connect a website to cookieless first-party analytics, ad-cost attribution and server-side conversions.",
+  "version": "1.0.0",
+  "plugins": [
+    {
+      "name": "x3",
+      "source": "./plugins/x3",
+      "description": "X3 Growth Intelligence for Claude: the X3 MCP server plus the skill x3-connect-website that installs and verifies X3 on a website end to end.",
+      "version": "1.0.0",
+      "category": "analytics",
+      "tags": ["analytics", "tracking", "attribution", "conversions", "gdpr", "mcp"]
+    }
+  ]
+}

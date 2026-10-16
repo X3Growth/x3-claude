@@ -1,0 +1,14 @@
+{
+  "name": "x3",
+  "displayName": "X3 Growth Intelligence",
+  "version": "1.0.0",
+  "description": "Connect a website to X3 Growth Intelligence end to end (project, SDK install, consent, events, server-side leads and conversions, verification, goals and presets) and analyse it through the X3 MCP server.",
+  "author": {
+    "name": "X3 Growth",
+    "url": "https://github.com/X3Growth"
+  },
+  "homepage": "https://intelligence.x3growth.io",
+  "repository": "https://github.com/X3Growth/x3-claude",
+  "license": "MIT",
+  "keywords": ["analytics", "cookieless", "attribution", "conversions", "tracking", "mcp"]
+}

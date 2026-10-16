@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "x3": {
+      "type": "http",
+      "url": "https://api.x3growth.io/mcp"
+    }
+  }
+}
