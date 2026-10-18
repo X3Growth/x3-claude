@@ -30,7 +30,12 @@ connect an ad account. Never start it on your own, and confirm the exact action 
 ## Conversion destinations (Meta CAPI, Google Ads, LinkedIn, TikTok)
 
 1. Read `conversions` and the platform guide; list existing definitions (`conversions_definitions_list`).
-2. Credentials (pixel/dataset ids, access tokens, customer ids) are entered by the user in the X3
+2. Send the user to Einstellungen → Meldungen → „Abschlüsse an <Plattform> melden“: the wizard checks
+   the ad connection first, lists LinkedIn conversion rules / Google Ads conversion actions by name
+   (`conversions_targets_list` shows the same) and can create „X3 · Neuer Lead“ etc.
+   (`conversions_target_create` – only after the user agreed, it writes to their ad account).
+   `problem: approval_pending` means LinkedIn still reviews the user's app – say so, do not retry.
+   Remaining credentials (Meta CAPI token, TikTok pixel token) are entered by the user in the X3
    dashboard, never pasted into chat or code.
 3. Test only with `conversions_send_test` in test mode; review `conversions_match_quality`.
    Never call `conversions_mark` on real leads just to test.
