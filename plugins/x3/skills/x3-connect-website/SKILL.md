@@ -150,6 +150,13 @@ TikTok ad accounts, follow `references/ads-and-dashboard.md`. Never do this proa
   the health preset locks every relaxation. Sites pick the change up with their next config fetch.
 - For element-level fixes prefer `data-x3-mask` / `data-x3-block` attributes in the site's code over
   relaxing a whole category.
+- Sharing ONE recording with someone without an X3 account (e.g. a client): `recordings_share_create`
+  (needs `recordings:read` + project admin) – view-only link, masked exactly as recorded, no visitor
+  identity or lead data, expiry 1/7/30 days or never (default 7), optional password. Ask first, hand
+  the link (shown once) only to the user, never post it publicly; revoke with `recordings_share_revoke`.
+  The health preset forbids sharing. Guide `behavior/recordings#sharing-a-recording`.
+- Test visits: open the site with `?x3_test=1` (works on every project, also next to its own test
+  parameter). Visits already counted as real ones: `sessions_mark_test` (project admin, one-way, audited).
 
 ## 4. Safety rules (always)
 
@@ -160,7 +167,7 @@ TikTok ad accounts, follow `references/ads-and-dashboard.md`. Never do this proa
   audiences or pixels. Connecting accounts happens only on explicit request and only through X3's
   connect flows, with the user completing the platform login themselves.
 - **Writes need consent:** ask before creating projects, keys, goals, presets, conversion definitions,
-  changing tracking config or recording masking, and before `git commit`/`push`/PRs. Use dry runs where a tool offers them.
+  changing tracking config or recording masking, sharing recordings, marking visits as test traffic, and before `git commit`/`push`/PRs. Use dry runs where a tool offers them.
 - **Privacy:** no cookies or storage before consent beyond what the SDK documents; no form values or
   raw contact data in events; contact data only via the documented hashed/server-side paths.
 - **Personal data in X3:** use lead tools (`leads_*`, `analytics_leads`) only when the task needs it,
