@@ -27,6 +27,20 @@ connect an ad account. Never start it on your own, and confirm the exact action 
    backfill can take a while. Then show the UTM templates (`ads_utm_templates`) the user should put on
    their ads – the user changes their ads, not you.
 
+## Unknown campaigns (boosted posts, unconnected ad accounts)
+
+Paid clicks whose campaign X3 cannot name usually come from a boosted Instagram/Facebook post or an
+ad account that is not connected. Read `ads/matching` first.
+
+1. List them with `ads_unknown_campaigns_list` (campaign → ad set → ad, visits, leads, landing page).
+   Labels like „Unbekannte Meta-Kampagne (…8718)“ are placeholders – never present an id as a name.
+2. Prefer connecting the ad account (see above): synced names and real spend always win.
+3. Only if the user confirms, name the ids with `ads_manual_entities_upsert` (name from the user;
+   estimated spend only with the user's amount and date range – it stays flagged as an estimate and
+   is never sent to an ad platform), or hide an id with `state: "ignored"`. Check
+   `rematch.state`; `running` means a background pass continues (`ads_sync_status`).
+4. Review with `ads_manual_entities_list`; undo with `ads_manual_entities_delete`.
+
 ## Conversion destinations (Meta CAPI, Google Ads, LinkedIn, TikTok)
 
 1. Read `conversions` and the platform guide; list existing definitions (`conversions_definitions_list`).
