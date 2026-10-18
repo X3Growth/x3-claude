@@ -76,7 +76,7 @@ The 0–100 interest score per session, its versioned model and rankings by chan
 
 Answering questions about traffic, pages, sessions, videos, downloads, 404s; SQL for anything else.
 
-- Tools: `analytics_overview`, `analytics_timeseries`, `analytics_breakdown`, `analytics_pages`, `analytics_goals`, `analytics_leads`, `analytics_videos`, `analytics_video_retention`, `analytics_video_timeline`, `analytics_downloads`, `analytics_outbound_links`, `analytics_not_found`, `analytics_filter_options`, `sessions_list`, `sessions_get`, `sessions_mark_test`, `explain_metric`, `search`, `sql_query`, `schema_get`
+- Tools: `analytics_overview`, `analytics_timeseries`, `analytics_breakdown`, `analytics_pages`, `analytics_goals`, `analytics_leads`, `analytics_videos`, `analytics_video_retention`, `analytics_video_timeline`, `analytics_downloads`, `analytics_outbound_links`, `analytics_not_found`, `analytics_filter_options`, `sessions_list`, `sessions_get`, `sessions_mark_test`, `sessions_mark_seen`, `explain_metric`, `search`, `sql_query`, `schema_get`
 - Prompts: `analysis`, `weekly_report`
 - Guides: `concepts/sessions`, `api/filters`, `concepts/data-model`
 
