@@ -50,6 +50,11 @@ Never write X3 code from memory. Before each phase, read the relevant guide.
   codes and fixes. Re-run it after each phase; it is the progress tracker.
 - Ask once, up front, for anything you cannot detect: site URL(s), which project, whether ads run on
   Meta/Google/LinkedIn/TikTok, whether a CRM/backend receives form submissions.
+- Call `billing_usage` once: it tells the plan (Free, Projekt/Agency Analytics, Growth, Pro), its limits
+  (projects, ad accounts, pageviews) and which features it locks. Plan for what the plan includes – a tool
+  that answers „In Deinem Plan nicht enthalten – Upgrade auf …“ is not an error to work around; tell the
+  user and link the billing page from the answer. Never upgrade, pay or cancel for the user (not possible
+  over MCP); `billing_plans` lists the plans and prices when the user asks.
 
 ## 3. Workflow
 
@@ -130,6 +135,22 @@ test visit has arrived and `setup_status` shows the install step as done.
 Only when the user **explicitly** asks you to operate the X3 dashboard or connect Meta/Google/LinkedIn/
 TikTok ad accounts, follow `references/ads-and-dashboard.md`. Never do this proactively.
 
+### Phase I – Recordings: masking (only on request)
+- Read the current masking with `behavior_masking_get`: per category (`text`, `inputs`, `choices`,
+  `attributes`, `links`, `images`) the option, the X3 recommendation, the risk light and explanation,
+  the scope (`relax`: `all` | `test`) and the never-switchable floor. Guide `behavior/recordings#masking`.
+- Recommend the X3 default (marketing sites: page texts visible with PII filter, everything else
+  masked; sector presets: shapes only). For QA of forms or quizzes suggest `relax: "test"` instead of
+  relaxing for everyone: only visits with the project's test parameter, `test: true` in the snippet
+  (signed-in staff) or devices opened once with `?x3_internal=1` get the relaxed values.
+- Change it with `behavior_masking_update` (project admin). An option less strict than the recommendation
+  needs `acknowledge: [{ category, text, confirmed: true }]` – explain the risk and **only confirm after
+  the human admin explicitly agreed**; it is stored with their name and time in the audit log. Never
+  touch the floor (passwords, payment fields, one-time codes, file uploads) – it cannot be relaxed, and
+  the health preset locks every relaxation. Sites pick the change up with their next config fetch.
+- For element-level fixes prefer `data-x3-mask` / `data-x3-block` attributes in the site's code over
+  relaxing a whole category.
+
 ## 4. Safety rules (always)
 
 - **Secrets:** never print, log, commit or paste secret keys, proxy keys, OAuth tokens or `.env` values.
@@ -139,7 +160,7 @@ TikTok ad accounts, follow `references/ads-and-dashboard.md`. Never do this proa
   audiences or pixels. Connecting accounts happens only on explicit request and only through X3's
   connect flows, with the user completing the platform login themselves.
 - **Writes need consent:** ask before creating projects, keys, goals, presets, conversion definitions,
-  changing tracking config, and before `git commit`/`push`/PRs. Use dry runs where a tool offers them.
+  changing tracking config or recording masking, and before `git commit`/`push`/PRs. Use dry runs where a tool offers them.
 - **Privacy:** no cookies or storage before consent beyond what the SDK documents; no form values or
   raw contact data in events; contact data only via the documented hashed/server-side paths.
 - **Personal data in X3:** use lead tools (`leads_*`, `analytics_leads`) only when the task needs it,
