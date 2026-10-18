@@ -154,4 +154,7 @@ End with a short list: project (org/slug) · stack and hosting · files changed/
 variable **names** and where to set them · proxy yes/no · consent integration · events/goals/presets
 set up · server-side calls · result of each verification check (✓/✗) with time of the first pageview ·
 open items from `setup_status` with their fix · suggested commit message (commit/push only after OK).
+Once real visitors arrive, `portfolio_live` shows visitors right now and today's leads, conversions and
+purchases for every connected site at once (test visits never count there – use `events_tail` with
+`include_test: true` for the test pageview).
 Write user-facing German text in Du-Form when the user writes German.
