@@ -163,6 +163,12 @@ conversions) and before committing code.
   with recipes), not single `goals_create` calls. Further goals/funnels for other actions
   (`goals_create`, `funnels_create`, quizzes via `questionnaires_upsert`; guide `concepts/goals-funnels`);
   conversions only for real inquiries/appointments/sales (`conversions/definitions`).
+- Questions about a funnel („got better or worse?“, „where do they drop off?“): `analytics_funnel`
+  with `compare: "previous"` (or "previous_year", "custom") and read each step's `change.verdict` –
+  "too_few" or "unclear" is no change, say so. Then `view: "changes"` (which segment moved), `"trend"`
+  (when; check `annotations_list` for releases or campaigns that day), `"dropoff"` with `step`
+  (where they went; pass `filterValue` as `filter.funnel_step` to `sessions_list`), `"breakdown"`,
+  `"cohorts"` (with `unit: "visitor"`), `"timing"`. Guide `concepts/goals-funnels#analysing-a-funnel-over-time`.
 - Ad-platform conversion uploads (Meta CAPI, Google Ads, LinkedIn, TikTok) are configured per the
   `conversions/*` guides; test only with `conversions_send_test` (test mode) – never upload real
   conversions to try things out.

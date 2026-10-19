@@ -50,7 +50,7 @@ Project settings such as mode (leads/shop/mixed), attribution model, currency, t
 
 ## C7 – Goals, funnels, questionnaires (Ziele, Funnels, Fragebögen)
 
-Goals for meaningful actions, funnels, quiz/questionnaire definitions and answers.
+Goals for meaningful actions, funnels and their analysis over time (comparison with an honest verdict, trend, what changed, segments, cohorts, time to convert, drop-off with the visits behind it), quiz/questionnaire definitions and answers.
 
 - Tools: `goals_list`, `goals_create`, `goals_update`, `goals_delete`, `funnels_list`, `funnels_create`, `funnels_update`, `funnels_delete`, `questionnaires_list`, `questionnaires_upsert`, `analytics_funnel`, `analytics_answers`
 - Guides: `concepts/goals-funnels`
