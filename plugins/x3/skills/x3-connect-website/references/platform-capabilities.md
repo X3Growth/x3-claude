@@ -56,6 +56,19 @@ Goals for meaningful actions, funnels, quiz/questionnaire definitions and answer
 - Guides: `concepts/goals-funnels`
 - Workflow: `SKILL.md`
 
+## C27 – Lead setup (Lead festlegen)
+
+Decide what counts as a lead (Anfrage) and a contact attempt (WhatsApp, phone, e-mail, booking clicks): proposal from a site scan and 30 days of events, apply with dry run, hand open points to a technician or an AI, verify by X3's own signals.
+
+- Tools: `lead_setup_get`, `lead_setup_apply`, `lead_setup_verify`
+- Prompts: `lead_setup`
+- Guides: `getting-started/lead-setup`, `getting-started/lead-handoff`, `concepts/goals-funnels`
+- Workflow: `SKILL.md`
+- Safety: lead_setup_apply always with dry_run first; apply only after the user agreed. A changed proposal is refused: run the dry run again.
+- Safety: Success only when lead_setup_verify says so, never on the AI's own judgement (it stores the check, so it asks for approval).
+- Safety: Never write lead rows or change conversion uploads to try something out.
+- Safety: Only confirmed roles count as leads; a goal created without `role` stays a proposal until the owner confirms it.
+
 ## C8 – Presets (Vorlagen (Presets))
 
 Reusable setups for similar websites; derive one from a site.

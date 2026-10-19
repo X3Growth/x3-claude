@@ -62,6 +62,7 @@ What does the user want? Pick the part of this skill first:
 
 | The user wants … | Read |
 |---|---|
+| only to define what counts as a lead (forms, WhatsApp, phone, bookings) | the MCP prompt `lead_setup` – not Phases A–K (see „Lead festlegen“ below) |
 | to connect, install, fix or verify tracking | Phases A–G below, `references/verification.md` |
 | an answer from their data, a report, settings, keys, sharing | `references/platform-capabilities.md` (every capability with tools, guides, safety) |
 | ad accounts or dashboard operations (explicitly asked) | `references/ads-and-dashboard.md` |
@@ -72,6 +73,21 @@ What does the user want? Pick the part of this skill first:
 Work through the phases in order; skip a phase only when `setup_status` says it is done or the user
 declines it. Confirm with the user before every write to X3 (project, config, goals, presets,
 conversions) and before committing code.
+
+### Lead festlegen (before Phase A when that is all the user wants)
+- Use the prompt `lead_setup` (or follow it): `lead_setup_get` → show the proposal → `lead_setup_apply`
+  with `dry_run: true`, show the diff → the same call with `dry_run: false` after OK.
+- Roles: Anfrage (`lead`, counts as a lead once per person, also without contact data) ·
+  Kontaktversuch (`contact`: WhatsApp, phone, e-mail, external booking clicks; counted apart, never
+  sent to ad platforms by itself) · nicht zählen (`step`). The KPI keeps the name „Leads“.
+- Only a confirmed role counts (`lead_setup_apply`, or `role` in `goals_create`/`goals_update`); a
+  default role of an older goal or a template is a proposal. Confirming counts 30 days back and the
+  timeline note says by how much the number changed; nothing older changes.
+- If `lead_setup_apply` says the proposal changed since the dry run, run the dry run again and show
+  the new diff.
+- Open points (status `missing`) come with a recipe for the detected stack in `lead_setup_get`;
+  with code access show the diff first, without code access guide the user through the builder.
+- Done only when `lead_setup_verify` says so – never on your own judgement.
 
 ### Phase A – Project
 - `project_list`. Pick the project whose domain matches the site; if several match, ask.
@@ -111,7 +127,10 @@ conversions) and before committing code.
 - Get the `events` instructions (`setup_get_prompt` kind `events`) and read `sdk/events`,
   `sdk/data-attributes`, `sdk/forms`, `sdk/video`, `sdk/sections`.
 - Inventory what visitors can do on the site: forms, booking widgets (Calendly, Cal.com, …),
-  WhatsApp/phone/mail links, quizzes/calculators, primary CTAs, videos, downloads.
+  WhatsApp/phone/mail links, quizzes/calculators, primary CTAs, videos, downloads. `lead_setup_get`
+  lists what X3's own scan found; for embedded forms (Jotform, Typeform, HubSpot Forms), bookings and
+  purchases use its recipes (redirect to a thank-you page, postMessage listener, booking message, purchase
+  event) instead of writing your own snippets.
 - Prefer, in this order: what the SDK tracks automatically → declarative data attributes → presets/bridges
   from the SDK → custom `track` calls. Check the event catalog (`schema_event_catalog` or
   `sdk/event-catalog`) before inventing event names; validate custom events with `events_validate`.
@@ -132,8 +151,9 @@ conversions) and before committing code.
 - Presets first: `presets_list` (built-in templates + organization presets). For a new site use the MCP
   prompt `preset_from_website` or adapt the closest template; apply with `presets_apply` **dry run
   first**, show the diff, apply after OK. See `insights/presets`.
-- Goals/funnels for every meaningful action (`goals_create`, `funnels_create`, quizzes via
-  `questionnaires_upsert`; guide `concepts/goals-funnels`);
+- What counts as a lead or contact attempt: `lead_setup_apply` (roles, booking adapters, open points
+  with recipes), not single `goals_create` calls. Further goals/funnels for other actions
+  (`goals_create`, `funnels_create`, quizzes via `questionnaires_upsert`; guide `concepts/goals-funnels`);
   conversions only for real inquiries/appointments/sales (`conversions/definitions`).
 - Ad-platform conversion uploads (Meta CAPI, Google Ads, LinkedIn, TikTok) are configured per the
   `conversions/*` guides; test only with `conversions_send_test` (test mode) – never upload real
@@ -141,7 +161,8 @@ conversions) and before committing code.
 
 ### Phase G – Verify (mandatory)
 Follow `references/verification.md`. Do not report success before a real pageview from the user's
-test visit has arrived and `setup_status` shows the install step as done.
+test visit has arrived and `setup_status` shows the install step as done. Finish with
+`lead_setup_verify`: every open point of the lead setup must show its state from X3.
 
 ### Phase H – Dashboard operations and ad accounts (only on explicit request)
 Only when the user **explicitly** asks you to operate the X3 dashboard or connect Meta/Google/LinkedIn/
@@ -214,6 +235,8 @@ wants CRM revenue in X3 (guides `crm/overview`, `sdk/lead`, `insights/real-roas`
   explicitly says so (`owner_confirmed` only after a direct instruction in this conversation); no
   early winner, no stopping because of interim numbers; keys and arm params are public (no unreleased
   prices); price/offer tests need the legal-review hint; never deploy yourself.
+- **claude.ai without a repository:** never hand out code without saying exactly where it goes in the
+  site builder or tool (which page, which block or setting, what to look for in the menu).
 - **Minimal code changes:** fit the existing code style; run the project's typecheck/lint/tests/build
   and fix only what your change broke.
 
