@@ -147,9 +147,9 @@ Read-only share links and embeds for people without an X3 account.
 
 ## C19 – Customer journeys (Journeys)
 
-Visits of one person linked across days and devices; manual link/unlink.
+Visits of one person linked across days and devices; manual link/unlink; all visits of a lead.
 
-- Tools: `journeys_list`, `journeys_get`, `journeys_link`, `journeys_unlink`, `journeys_coverage`
+- Tools: `journeys_list`, `journeys_get`, `journeys_link`, `journeys_unlink`, `journeys_coverage`, `leads_sessions`, `leads_session_candidates`, `leads_sessions_link`, `leads_sessions_unlink`
 - Guides: `concepts/journeys`
 
 ## C20 – Portfolio (agency) (Portfolio (Agentur))

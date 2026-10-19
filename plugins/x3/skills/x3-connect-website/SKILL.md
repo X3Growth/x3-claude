@@ -146,6 +146,14 @@ conversions) and before committing code.
   never expose it with a public prefix (`NEXT_PUBLIC_`, `VITE_`, `PUBLIC_`).
 - Pass the browser ids the docs describe (session/visitor/event id) so leads join their sessions, and
   use the documented event id for deduplication with ad pixels.
+- **Known visitor → lead** (customer area, newsletter link with a contact id, CRM-opened page): call
+  `identify({ leadId })` with the site's own CRM/lead id (or the X3 lead id) – hashed in the browser, it
+  never creates a lead; X3 maps it to the lead's `externalId`, X3 id or CRM record id (guide
+  `sdk/identify` › „Link visits to a lead“). It follows the project's identify consent rule.
+- **Never** build anything that recognizes visitors without consent (no own cookies, localStorage,
+  fingerprinting, IP/UA matching): without consent only forms, WhatsApp codes, click ids, `identify({ leadId })`
+  and manual assignments link visits to a lead. Check with `leads_sessions` (evidence per visit); assign
+  a visit by hand only after the user confirms it (`leads_session_candidates` → `leads_sessions_link`).
 
 ### Phase F – Goals, conversions, presets
 - Presets first: `presets_list` (built-in templates + organization presets). For a new site use the MCP
