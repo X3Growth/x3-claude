@@ -62,6 +62,7 @@ What does the user want? Pick the part of this skill first:
 
 | The user wants … | Read |
 |---|---|
+| „Richte X3 für meine Website … ein“ (the task from the X3 onboarding) | `setup_get_prompt` with kind `onboarding` (or the prompt `onboarding_setup`) – it opens the setup session the user watches in X3; follow it instead of Phases A–K |
 | only to define what counts as a lead (forms, WhatsApp, phone, bookings) | the MCP prompt `lead_setup` – not Phases A–K (see „Lead festlegen“ below) |
 | to connect, install, fix or verify tracking | Phases A–G below, `references/verification.md` |
 | an answer from their data, a report, settings, keys, sharing | `references/platform-capabilities.md` (every capability with tools, guides, safety) |
@@ -80,9 +81,14 @@ conversions) and before committing code.
 - Roles: Anfrage (`lead`, counts as a lead once per person, also without contact data) ·
   Kontaktversuch (`contact`: WhatsApp, phone, e-mail, external booking clicks; counted apart, never
   sent to ad platforms by itself) · nicht zählen (`step`). The KPI keeps the name „Leads“.
-- Only a confirmed role counts (`lead_setup_apply`, or `role` in `goals_create`/`goals_update`); a
-  default role of an older goal or a template is a proposal. Confirming counts 30 days back and the
-  timeline note says by how much the number changed; nothing older changes.
+- Only a role a person confirmed in X3 counts. Roles you write (`lead_setup_apply` after the user's
+  OK in the chat, `goals_create`/`goals_update` with a `role`) are stored as yours (`ai`) and count
+  once the person confirms them in X3 („Anfragen festlegen“); writing the same role again never
+  undoes what the person confirmed. A default role of an older goal or a template is a proposal too.
+  During an X3 setup session (`setup_session_start`) use `lead_setup_propose` – while the session
+  runs, `lead_setup_apply` without dry run, keys, ad accounts, conversions and deleting goals,
+  funnels or the project are refused on that project (MCP and REST alike). Confirming counts 30
+  days back and the timeline note says by how much the number changed; nothing older changes.
 - If `lead_setup_apply` says the proposal changed since the dry run, run the dry run again and show
   the new diff.
 - Open points (status `missing`) come with a recipe for the detected stack in `lead_setup_get`;

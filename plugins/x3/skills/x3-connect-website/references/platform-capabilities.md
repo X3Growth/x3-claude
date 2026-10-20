@@ -8,8 +8,8 @@ The docs win over this list; if a tool is missing, search the docs for its repla
 
 Connecting a website: project, SDK/script install, proxy, verification.
 
-- Tools: `project_list`, `project_get`, `project_status`, `project_create`, `project_delete`, `setup_status`, `setup_get_prompt`, `setup_detect_stack`, `setup_get_instructions`, `setup_generate_snippet`, `setup_verify_installation`
-- Prompts: `connect_website`, `install`, `connection_test`, `debug_tracking`
+- Tools: `project_list`, `project_get`, `project_status`, `project_create`, `project_delete`, `setup_status`, `setup_get_prompt`, `setup_session_start`, `setup_session_note`, `setup_session_finish`, `setup_detect_stack`, `setup_get_instructions`, `setup_generate_snippet`, `setup_verify_installation`
+- Prompts: `onboarding_setup`, `connect_website`, `install`, `connection_test`, `debug_tracking`
 - Guides: `getting-started/quickstart`, `getting-started/onboarding`, `frameworks`, `proxy`
 - Workflow: `SKILL.md`
 
@@ -60,7 +60,7 @@ Goals for meaningful actions, funnels and their analysis over time (comparison w
 
 Decide what counts as a lead (Anfrage) and a contact attempt (WhatsApp, phone, e-mail, booking clicks): proposal from a site scan and 30 days of events, apply with dry run, hand open points to a technician or an AI, verify by X3's own signals.
 
-- Tools: `lead_setup_get`, `lead_setup_apply`, `lead_setup_verify`
+- Tools: `lead_setup_get`, `lead_setup_propose`, `lead_setup_apply`, `lead_setup_verify`
 - Prompts: `lead_setup`
 - Guides: `getting-started/lead-setup`, `getting-started/lead-handoff`, `concepts/goals-funnels`
 - Workflow: `SKILL.md`
