@@ -9,7 +9,7 @@ The docs win over this list; if a tool is missing, search the docs for its repla
 Connecting a website: project, SDK/script install, proxy, verification.
 
 - Tools: `project_list`, `project_get`, `project_status`, `project_create`, `project_delete`, `setup_status`, `setup_get_prompt`, `setup_session_start`, `setup_session_note`, `setup_session_finish`, `setup_detect_stack`, `setup_get_instructions`, `setup_generate_snippet`, `setup_verify_installation`
-- Prompts: `onboarding_setup`, `connect_website`, `install`, `connection_test`, `debug_tracking`
+- Prompts: `onboarding_setup`, `connect_website`, `full_setup`, `install`, `connection_test`, `debug_tracking`
 - Guides: `getting-started/quickstart`, `getting-started/onboarding`, `frameworks`, `proxy`
 - Workflow: `SKILL.md`
 

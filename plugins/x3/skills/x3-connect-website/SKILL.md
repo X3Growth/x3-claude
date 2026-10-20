@@ -24,10 +24,14 @@ Never write X3 code from memory. Before each phase, read the relevant guide.
 1. **With the X3 MCP server connected** (tools such as `setup_status`, `docs_search` are available):
    - `docs_search` / `docs_read` for guides; resource `x3://docs/index.md` lists every page.
    - `setup_get_instructions` returns the parsed framework recipe (files, actions, env vars).
-   - `setup_get_prompt` (kinds `install`, `events`, `server_conversions`, `connection_test`,
-     `troubleshoot`) returns the current, project-specific step-by-step instructions. Follow them –
-     they are maintained with the product and override anything in this skill.
-   - The MCP prompts with the same names (`install`, `events`, `server_conversions`,
+   - `setup_get_prompt` (kinds `full_setup`, `install`, `events`, `server_conversions`,
+     `connection_test`, `troubleshoot`) returns the current, project-specific step-by-step
+     instructions. Follow them – they are maintained with the product and override anything in this
+     skill. `full_setup` is the whole website connection in one prompt (tracking, consent, inquiries,
+     contact paths, videos, quiz, server-side conversions, experiments, checks); pass `target` for the
+     coding tool you run in (claude_code, codex, cursor, windsurf, vscode_copilot, gemini_cli or
+     other).
+   - The MCP prompts with the same names (`full_setup`, `install`, `events`, `server_conversions`,
      `connection_test`, `debug_tracking`, `preset_from_website`) render the same text without a project.
    - Only the public docs server `x3-docs` (`<origin>/mcp/public`: `docs_*`, `setup_get_instructions`,
      `events_validate`, no `setup_status`)? Docs work, project data does not – ask the user to add
