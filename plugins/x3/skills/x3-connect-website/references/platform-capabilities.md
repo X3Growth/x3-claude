@@ -128,7 +128,7 @@ Notes and automatic markers on time series (deploys, campaigns, setting changes,
 
 Organic search queries and pages from Google Search Console.
 
-- Tools: `search_console_status`, `search_console_report`, `search_console_sync`
+- Tools: `search_console_status`, `search_console_report`, `search_console_opportunities`, `search_console_sync`
 - Guides: `insights/search-console`
 
 ## C17 – Weekly report (Wochenbericht)
@@ -208,6 +208,17 @@ The organization's plan, limits, this month's usage, locked features and the che
 - Tools: `billing_usage`, `billing_plans`
 - Guides: `concepts/plans-limits`
 - Safety: Read-only: plan changes, payment and cancellation only in the dashboard (Einstellungen › Abo & Nutzung).
+
+## C28 – Visitors: traffic, quality, return (Besucher: Traffic, Qualität, Wiederkehr)
+
+How many people come and why the number changed (change engine), interest over time by source (Traffic-Qualität, Quellen vergleichen), who comes back (return layers with their basis), when visitors come, today vs. usual, the measuring start, the monthly lead target with its projection, leads waiting for an answer and the biggest gap on the way to an inquiry.
+
+- Tools: `traffic_summary`, `analytics_changes`, `traffic_quality`, `traffic_returning`, `traffic_heatmap`, `analytics_baseline`, `traffic_data_quality`, `leads_projection`, `lead_goal_get`, `lead_goal_set`, `leads_awaiting`, `behavior_biggest_gap`
+- Guides: `concepts/sessions`, `concepts/relevance`, `concepts/privacy`, `insights/pulse`, `insights/leads`
+- Safety: Never invent numbers: rephrase sentence_de only with the numbers in the result; changes are always Besuche, never „Besucher“.
+- Safety: Hidden cells (null, suppressed) stay hidden: never compute them from totals; rounded cells read „etwa“.
+- Safety: Never an overall return rate, never extrapolate consent figures to all visitors, never „neue Besucher“ without consent.
+- Safety: lead_goal_set only with a number the user named.
 
 ## C24 – Documentation (Dokumentation)
 
