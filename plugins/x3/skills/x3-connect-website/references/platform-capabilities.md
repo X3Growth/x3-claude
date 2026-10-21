@@ -95,7 +95,7 @@ Answering questions about traffic, pages, sessions, videos, downloads, 404s; SQL
 
 ## C12 – Ad accounts, costs, previews (Werbekonten, Kosten, Vorschau)
 
-Spend, CPC, cost per relevant session, CPL, ROAS; UTM templates; mapping rules – read-only analysis.
+Spend, CPC, CPM, cost per relevant session, CPL, ROAS and the key figures per row (visitors, click to visit, interested and hot share, lead rate, interested/hot to lead, contact attempts, cost per hot visit – guide `ads/cost-kpis`); UTM templates; mapping rules – read-only analysis.
 
 - Tools: `ads_performance`, `ads_timeseries`, `ads_unmatched`, `ads_accounts_list`, `ads_sync_status`, `ads_sync_run`, `ads_mapping_rules_list`, `ads_mapping_rules_create`, `ads_mapping_rules_delete`, `ads_utm_templates`, `ad_preview`, `ads_unknown_campaigns_list`, `ads_manual_entities_list`, `ads_manual_entities_upsert`, `ads_manual_entities_delete`
 - Prompts: `campaign_review`
