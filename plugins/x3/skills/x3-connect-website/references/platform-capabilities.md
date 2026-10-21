@@ -35,7 +35,7 @@ Mapping forms, CTAs, bookings, videos to events; event schemas; auto-capture swi
 
 Leads from the backend, conversion uploads to ad platforms, pipeline status, notes, revenue import.
 
-- Tools: `leads_list`, `leads_get`, `leads_update_pipeline`, `leads_notes_list`, `leads_notes_create`, `leads_revenue_import`, `conversions_list`, `conversions_definitions_list`, `conversions_mark`, `conversions_retry`, `conversions_update_status`, `conversions_send_test`, `conversions_match_quality`, `conversions_targets_list`, `conversions_target_create`
+- Tools: `leads_list`, `leads_get`, `leads_update_pipeline`, `leads_notes_list`, `leads_notes_create`, `leads_revenue_import`, `conversions_list`, `conversions_definitions_list`, `conversions_mark`, `conversions_retry`, `conversions_update_status`, `conversions_send_test`, `conversions_match_quality`, `conversions_targets_list`, `conversions_target_create`, `conversions_destinations_list`
 - Prompts: `server_conversions`
 - Guides: `sdk/server`, `concepts/conversions`, `conversions`, `conversions/purchases`, `insights/leads`
 - Safety: Lead tools return personal data: use them only when the task needs it, never paste contact data into reports.
