@@ -214,8 +214,10 @@ The organization's plan, limits, this month's usage, locked features and the che
 How many people come and why the number changed (change engine), interest over time by source (Traffic-Qualität, Quellen vergleichen), who comes back (return layers with their basis), when visitors come, today vs. usual, the measuring start, the monthly lead target with its projection, leads waiting for an answer and the biggest gap on the way to an inquiry.
 
 - Tools: `traffic_summary`, `analytics_changes`, `traffic_quality`, `traffic_returning`, `traffic_heatmap`, `analytics_baseline`, `traffic_data_quality`, `leads_projection`, `lead_goal_get`, `lead_goal_set`, `leads_awaiting`, `behavior_biggest_gap`
-- Guides: `concepts/sessions`, `concepts/relevance`, `concepts/privacy`, `insights/pulse`, `insights/leads`
+- Guides: `concepts/visitors`, `insights/visitor-quality`, `concepts/sessions`, `concepts/relevance`, `concepts/privacy`, `insights/pulse`, `insights/leads`
+- Workflow: `references/visitors.md`
 - Safety: Never invent numbers: rephrase sentence_de only with the numbers in the result; changes are always Besuche, never „Besucher“.
+- Safety: Tiers: Nicht interessiert (key cold, never „Kalt“), Neugierig, Interessiert, Heiß; no tier is called „Lead“, leads come from the Leads list.
 - Safety: Hidden cells (null, suppressed) stay hidden: never compute them from totals; rounded cells read „etwa“.
 - Safety: Never an overall return rate, never extrapolate consent figures to all visitors, never „neue Besucher“ without consent.
 - Safety: lead_goal_set only with a number the user named.

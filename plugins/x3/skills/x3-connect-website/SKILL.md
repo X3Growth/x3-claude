@@ -70,6 +70,7 @@ What does the user want? Pick the part of this skill first:
 | only to define what counts as a lead (forms, WhatsApp, phone, bookings) | the MCP prompt `lead_setup` – not Phases A–K (see „Lead festlegen“ below) |
 | to connect, install, fix or verify tracking | Phases A–G below, `references/verification.md` |
 | an answer from their data, a report, settings, keys, sharing | `references/platform-capabilities.md` (every capability with tools, guides, safety) |
+| visitors per day, why traffic changed, interest by source, who comes back | `references/visitors.md` (tools and the counting rules for every answer) |
 | ad accounts or dashboard operations (explicitly asked) | `references/ads-and-dashboard.md` |
 | to test something on the website (A/B experiment) | Phase I, `references/experiments.md` |
 | to change what recordings mask | Phase J |
