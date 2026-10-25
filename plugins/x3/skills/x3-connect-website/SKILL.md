@@ -223,7 +223,8 @@ side effects, start (`experiments_start`) only after the user deployed and the c
   the link (shown once) only to the user, never post it publicly; revoke with `recordings_share_revoke`.
   The health preset forbids sharing. Guide `behavior/recordings#sharing-a-recording`.
 - Test visits: open the site with `?x3_test=1` (works on every project, also next to its own test
-  parameter). Visits already counted as real ones: `sessions_mark_test` (project admin, one-way, audited).
+  parameter). Visits already counted as real ones: `sessions_mark_test` (project admin, one-way, audited);
+  own test leads already counted (also leads without a visit): `leads_mark_test` (project admin, one-way, audited, confirm the lead ids with the user first).
 
 ### Phase K – CRM: leads to X3, X3 to the CRM, revenue back
 When the site creates CRM contacts itself (HubSpot/Pipedrive API calls, form-submission APIs) or the user
