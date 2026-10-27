@@ -211,6 +211,17 @@ Hand events to other systems (signed webhooks for new leads, status changes, con
 - Safety: Instant Form leads are never reported to ad platforms (Meta counts them itself) – do not mark them as conversions by hand.
 - Safety: Page tokens are entered in the dashboard or over REST, never in a chat.
 
+## C30 – App tracking (iOS, Android) (App-Tracking (iOS, Android))
+
+Connecting an iOS or Android app (Swift, Kotlin, React Native/Expo, Flutter): register the app, integrate the SDK with the consent mode the developer chose, verify the first screens, install sources with their accuracy, store notifications, Apple postbacks, the store privacy details.
+
+- Tools: `apps_list`, `apps_setup_status`, `apps_setup_instructions`, `apps_installs_report`, `apps_create`
+- Guides: `apps`, `apps/quickstart`, `apps/consent`, `apps/install-attribution`, `apps/privacy`, `api/app-ingest`
+- Workflow: `references/apps.md`
+- Safety: The consent mode (always, opt_in, opt_out) is the app developer's decision and responsibility: ask for it, never pick or change it yourself.
+- Safety: Only the publishable key of the app goes into the app; store tokens, the Play service account and RevenueCat secrets are entered in the dashboard, never in code or chat.
+- Safety: No IDFA/GAID, no fingerprinting: never add AdSupport, AD_ID or device-model collection to make attribution "better".
+
 ## C26 – Plans and usage (Pakete & Nutzung)
 
 The organization's plan, limits, this month's usage, locked features and the cheapest upgrade; every plan with prices and features.

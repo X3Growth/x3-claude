@@ -75,6 +75,7 @@ What does the user want? Pick the part of this skill first:
 | to test something on the website (A/B experiment) | Phase I, `references/experiments.md` |
 | to change what recordings mask | Phase J |
 | leads into their CRM, CRM revenue back (real ROAS) | Phase K, `references/platform-capabilities.md` (C25) |
+| to connect an iOS or Android app (Swift, Kotlin, React Native/Expo, Flutter), app installs, store purchases | `references/apps.md` (not Phases A–K) |
 
 Work through the phases in order; skip a phase only when `setup_status` says it is done or the user
 declines it. Confirm with the user before every write to X3 (project, config, goals, presets,
