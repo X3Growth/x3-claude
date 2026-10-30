@@ -41,6 +41,20 @@ ad account that is not connected. Read `ads/matching` first.
    `rematch.state`; `running` means a background pass continues (`ads_sync_status`).
 4. Review with `ads_manual_entities_list`; undo with `ads_manual_entities_delete`.
 
+## Shared ad accounts (campaigns of several projects)
+
+One ad account can feed several projects (a company account that also runs campaigns for a book or a
+second brand). Read `ads/campaign-selection` first.
+
+1. Look at the current selection with `ads_campaign_scope_list`, then the campaigns of the account with
+   `ads_campaign_scope_get` (name, status, 30-day spend, landing host, counts or not).
+2. Propose a mode per project – `only` the project's campaigns, or `all` `except` the other project's –
+   preferably with a name rule (`contains` / `prefix` / `regex`, case-insensitive) so new campaigns land
+   correctly, and show the preview of `ads_campaign_scope_set` with dry_run: true
+   (spend30dAdded / spend30dRemoved).
+3. Save only after the user confirms (`ads_campaign_scope_set` without dry_run). It applies to all
+   history right away and deletes nothing; nothing changes in the ad platform.
+
 ## Conversion destinations (Meta CAPI, Google Ads, LinkedIn, TikTok)
 
 1. Read `conversions` and the platform guide; list existing definitions (`conversions_definitions_list`).
