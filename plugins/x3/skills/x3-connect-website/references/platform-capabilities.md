@@ -8,7 +8,7 @@ The docs win over this list; if a tool is missing, search the docs for its repla
 
 Connecting a website: project, SDK/script install, proxy, verification.
 
-- Tools: `project_list`, `project_get`, `project_status`, `project_create`, `project_delete`, `setup_status`, `setup_get_prompt`, `setup_session_start`, `setup_session_note`, `setup_session_finish`, `setup_detect_stack`, `setup_get_instructions`, `setup_generate_snippet`, `setup_verify_installation`
+- Tools: `project_list`, `auth_whoami`, `tracking_origins_get`, `tracking_origins_update`, `project_get`, `project_status`, `project_create`, `project_delete`, `setup_status`, `setup_get_prompt`, `setup_session_start`, `setup_session_note`, `setup_session_finish`, `setup_detect_stack`, `setup_get_instructions`, `setup_generate_snippet`, `setup_verify_installation`
 - Prompts: `onboarding_setup`, `connect_website`, `full_setup`, `install`, `connection_test`, `debug_tracking`
 - Guides: `getting-started/quickstart`, `getting-started/onboarding`, `frameworks`, `proxy`
 - Workflow: `SKILL.md`
@@ -97,7 +97,7 @@ Answering questions about traffic, pages, sessions, videos, downloads, 404s; SQL
 
 Spend, CPC, CPM, cost per relevant session, CPL, ROAS and the key figures per row (visitors, click to visit, interested and hot share, lead rate, interested/hot to lead, contact attempts, cost per hot visit – guide `ads/cost-kpis`); UTM templates; mapping rules – read-only analysis.
 
-- Tools: `ads_performance`, `ads_timeseries`, `ads_unmatched`, `ads_accounts_list`, `ads_sync_status`, `ads_sync_run`, `ads_mapping_rules_list`, `ads_mapping_rules_create`, `ads_mapping_rules_delete`, `ads_utm_templates`, `ad_preview`, `ads_unknown_campaigns_list`, `ads_manual_entities_list`, `ads_manual_entities_upsert`, `ads_manual_entities_delete`, `ads_campaign_scope_list`, `ads_campaign_scope_get`, `ads_campaign_scope_set`
+- Tools: `ads_performance`, `ads_timeseries`, `ads_unmatched`, `ads_accounts_list`, `ads_connections_list`, `ads_accounts_select`, `ads_sync_status`, `ads_sync_run`, `ads_mapping_rules_list`, `ads_mapping_rules_create`, `ads_mapping_rules_delete`, `ads_utm_templates`, `ad_preview`, `ads_unknown_campaigns_list`, `ads_manual_entities_list`, `ads_manual_entities_upsert`, `ads_manual_entities_delete`, `ads_campaign_scope_list`, `ads_campaign_scope_get`, `ads_campaign_scope_set`
 - Prompts: `campaign_review`
 - Guides: `ads`, `concepts/ad-costs`, `ads/utm-templates`, `ads/matching`, `ads/campaign-selection`, `ads/delivery-status`
 - Workflow: `references/ads-and-dashboard.md`
@@ -163,7 +163,7 @@ Several client projects at a glance; client connect links.
 
 API and site keys, members, the audit log and MCP call history.
 
-- Tools: `keys_list`, `keys_create`, `keys_roll`, `keys_revoke`, `publishable_keys_list`, `publishable_keys_create`, `members_list`, `audit_list`, `mcp_calls_list`
+- Tools: `keys_list`, `keys_create`, `keys_roll`, `keys_revoke`, `publishable_keys_list`, `publishable_keys_create`, `publishable_keys_roll`, `publishable_keys_revoke`, `members_list`, `audit_list`, `mcp_calls_list`
 - Guides: `api/authentication`
 - Safety: Secret and proxy keys are created by the user; never print, log or commit them.
 
@@ -205,7 +205,7 @@ Leads go to X3, X3 pushes them to the connected CRMs (dedupe first, spam held ba
 
 Hand events to other systems (signed webhooks for new leads, status changes, conversions, decided experiments, with filters and a delivery log) and receive Meta Instant Form (Lead Ads) leads as X3 leads with tag and target project.
 
-- Tools: `webhooks_list`, `webhooks_create`, `webhooks_update`, `webhooks_delete`, `webhooks_test`, `webhooks_deliveries`, `webhooks_redeliver`, `instant_forms_status`, `instant_forms_pages_list`, `instant_forms_list`, `instant_forms_update`, `instant_forms_sync`, `instant_forms_simulate`
+- Tools: `webhooks_list`, `webhooks_create`, `webhooks_update`, `webhooks_delete`, `webhooks_test`, `webhooks_deliveries`, `webhooks_redeliver`, `instant_forms_status`, `instant_forms_pages_list`, `instant_forms_resubscribe`, `instant_forms_own_app_get`, `instant_forms_own_app_update`, `instant_forms_list`, `instant_forms_update`, `instant_forms_sync`, `instant_forms_simulate`
 - Guides: `api/webhooks`, `ads/meta-instant-forms`
 - Safety: Webhooks with contact data send personal data to another system: only with the user's explicit OK and a receiver the user controls; the signing secret goes into the receiver's secret store, never into chat logs or repositories.
 - Safety: Instant Form leads are never reported to ad platforms (Meta counts them itself) – do not mark them as conversions by hand.
