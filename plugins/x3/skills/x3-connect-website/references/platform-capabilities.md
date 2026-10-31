@@ -35,7 +35,7 @@ Mapping forms, CTAs, bookings, videos to events; event schemas; auto-capture swi
 
 Leads from the backend, conversion uploads to ad platforms, pipeline status, notes, revenue import.
 
-- Tools: `leads_list`, `leads_get`, `leads_update_pipeline`, `leads_notes_list`, `leads_notes_create`, `leads_revenue_import`, `leads_mark_test`, `conversions_list`, `conversions_definitions_list`, `conversions_definitions_upsert`, `conversions_definitions_delete`, `conversions_mark`, `conversions_retry`, `conversions_update_status`, `conversions_send_test`, `conversions_match_quality`, `conversions_targets_list`, `conversions_target_create`, `conversions_destinations_list`
+- Tools: `leads_list`, `leads_get`, `leads_update_pipeline`, `leads_notes_list`, `leads_notes_create`, `leads_revenue_import`, `leads_mark_test`, `conversions_list`, `conversions_definitions_list`, `conversions_definitions_upsert`, `conversions_definitions_delete`, `conversions_mark`, `conversions_retry`, `conversions_update_status`, `conversions_send_test`, `conversions_match_quality`, `conversions_targets_list`, `conversions_target_create`, `conversions_destinations_list`, `conversions_destination_update`, `conversions_retry_unreported`, `notifications_rules_list`, `notifications_rules_update`
 - Prompts: `server_conversions`
 - Guides: `sdk/server`, `concepts/conversions`, `conversions`, `conversions/purchases`, `insights/leads`
 - Safety: Lead tools return personal data: use them only when the task needs it, never paste contact data into reports.
@@ -242,6 +242,17 @@ How many people come and why the number changed (change engine), interest over t
 - Safety: Hidden cells (null, suppressed) stay hidden: never compute them from totals; rounded cells read „etwa“.
 - Safety: Never an overall return rate, never extrapolate consent figures to all visitors, never „neue Besucher“ without consent.
 - Safety: lead_goal_set only with a number the user named.
+
+## C31 – Troubleshooting (knowledge base) (Probleme lösen (Wissensdatenbank))
+
+Something does not work (an error text, a missing push, a purchase not reported, data rejected): find the article by the symptom or the exact X3 error text and follow its numbered steps – each names the dashboard path and the MCP tool with arguments. Errors that match an article carry its id (`help`, „So löst Du das“).
+
+- Tools: `kb_search`, `kb_get`
+- Guides: `troubleshooting`, `troubleshooting/de`
+- Workflow: `SKILL.md`
+- Safety: Call kb_search first with the exact error text before guessing; follow the steps in order and ask before every write a step names.
+- Safety: A step without MCP tool ("why") is for the person in the dashboard or the X3 App: tell them the exact path, never work around it.
+- Safety: A step with a release note ("since") may not be live yet: if the tool is unknown, use the dashboard path.
 
 ## C24 – Documentation (Dokumentation)
 
