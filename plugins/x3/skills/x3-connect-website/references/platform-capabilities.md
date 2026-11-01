@@ -302,6 +302,16 @@ The setter-closer report of the Sales Engine (id sales_report): dials, reach rat
 - Safety: Compare inbound and cold import with group lead_kind or the lead_kind filter instead of mixing them; costs exist only for inbound sources with a connected ad account.
 - Safety: Read-only: the report never changes lead kinds, deals or appointments.
 
+## C44 – Sales Engine: booking domains and branding (Sales Engine: eigene Domains & Branding)
+
+Own domains for the public booking pages of the Sales Engine (termine.meine-firma.de): add one, tell the person the CNAME (or A) and TXT record to set, verify it (ownership token, routing, hosting, SSL), choose the primary, remove it; and the branding of booking pages, embeddings, booking mails and calendar files (colours with the WCAG AA check, font, radius, texts, logos by id, „Powered by X3“ by package).
+
+- Tools: `sales_domains_list`, `sales_domains_add`, `sales_domains_verify`, `sales_domains_set_primary`, `sales_domains_remove`, `sales_branding_get`, `sales_branding_update`
+- Guides: `sales/booking-domains`, `troubleshooting/booking-domain-connect`, `troubleshooting/booking-domain-not-verified`
+- Safety: DNS records are set by the person at their own DNS provider; never claim a domain is connected before sales_domains_verify answers verified.
+- Safety: Add only domains the person says belong to their firm; removing a domain stops every link on it, so ask first.
+- Safety: Hiding „Powered by X3“ depends on the package: report sales_package_required, never work around it.
+
 ## C26 – Plans and usage (Pakete & Nutzung)
 
 The organization's plan, limits, this month's usage, locked features and the cheapest upgrade; every plan with prices and features.
