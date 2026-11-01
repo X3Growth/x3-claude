@@ -5,7 +5,7 @@ license: MIT
 compatibility: Works best with the X3 MCP server connected (https://api.x3growth.io/mcp). Installing code needs file access to the website repository (Claude Code, Cowork or a code-capable environment); without it, Claude produces the exact snippets for the user to paste.
 metadata:
   author: X3Growth
-  version: "1.1.0"
+  version: "1.2.0"
   homepage: https://intelligence.x3growth.io
   docs: https://api.x3growth.io/llms.txt
 ---
@@ -92,6 +92,7 @@ What does the user want? Pick the part of this skill first:
 | to change what recordings mask | Phase J |
 | leads into their CRM, CRM revenue back (real ROAS) | Phase K, `references/platform-capabilities.md` (C25) |
 | to connect an iOS or Android app (Swift, Kotlin, React Native/Expo, Flutter), app installs, store purchases | `references/apps.md` (not Phases A–K) |
+| to set up the Sales Engine (CRM): pipeline, lead status, call outcomes, script, templates, booking link, contacts, team | Phase L, `references/sales-setup.md` (not Phases A–K) |
 
 Work through the phases in order; skip a phase only when `setup_status` says it is done or the user
 declines it. Confirm with the user before every write to X3 (project, config, goals, presets,
@@ -258,6 +259,15 @@ wants CRM revenue in X3 (guides `crm/overview`, `sdk/lead`, `insights/real-roas`
   them on (`crm_settings_update`).
 - **Dubletten prüfen.** `crm_reviews_list` → show the candidates → `crm_review_resolve` only after the
   user chose. `crm_lead_push` defaults to a dry run; push, link and unlink only after an OK.
+
+### Phase L – Sales Engine einrichten (CRM, only when asked)
+When the user wants the X3 Sales Engine set up for their business („Richte die Sales Engine für mich ein“, the task
+from Einstellungen › KI & Agents): follow `references/sales-setup.md`. In short: `setup_session_start` with
+`product: "sales"` and `org` (the person watches every step live) → `sales_setup_guide` (what exists, whether you hold
+`sales:admin`) → ask about the business → propose and, after an OK each, create pipeline and stages, lead status
+labels, call outcomes, a call script, two or three mail templates and a booking link → contacts from a CSV or the
+mailbox and team invitations only as `sales_setup_propose` (the person applies them) → `setup_session_finish` with a
+summary. No Sales tools at all: `auth_whoami` and its `fix` (kb `sales-mcp-no-tools`).
 
 ## 5. Safety rules (always)
 
