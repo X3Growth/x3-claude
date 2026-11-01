@@ -195,7 +195,7 @@ A/B tests of anything on the website: plan honestly, implement both arms with SD
 
 Leads go to X3, X3 pushes them to the connected CRMs (dedupe first, spam held back) and reads meetings and won deals back: status Termin/Kunde, revenue, real ROAS by lead cohort.
 
-- Tools: `crm_connections_list`, `crm_connect_start`, `crm_sync_status`, `crm_sync_run`, `crm_lead_status`, `crm_lead_push`, `crm_lead_link`, `crm_lead_unlink`, `crm_search`, `crm_reviews_list`, `crm_review_resolve`, `crm_mappings_get`, `crm_mappings_update`, `crm_routing_rules_list`, `crm_routing_rules_upsert`, `crm_settings_update`, `leads_update`
+- Tools: `crm_connections_list`, `crm_connect_start`, `crm_sync_status`, `crm_sync_run`, `crm_lead_status`, `crm_lead_push`, `crm_lead_link`, `crm_lead_unlink`, `crm_search`, `crm_reviews_list`, `crm_review_resolve`, `crm_mappings_get`, `crm_mappings_update`, `crm_routing_rules_list`, `crm_routing_rules_upsert`, `crm_settings_update`, `crm_connection_update`, `leads_update`
 - Guides: `crm/overview`, `crm/hubspot`, `crm/pipedrive`, `sdk/lead`, `insights/real-roas`
 - Safety: Websites send leads to X3 only – never call the CRM API from the site.
 - Safety: crm_lead_push defaults to dry_run; push, link, unlink and review decisions only after the user confirmed.
@@ -318,7 +318,7 @@ Calls of the Sales Engine (id sales_calling): log a call a person made with its 
 
 Switching the Sales Engine on (id sales_start): admins switch it on with the standard pipeline and call outcomes, members ask their admins for it (bell and mail), admins read the open requests and the start steps on Heute (only switching on is required: skip a step, work alone, hide the checklist); and per Growth Intelligence project whether its leads become contacts, whether status and revenue go back and which round robin team gets them, for one project, several or all at once.
 
-- Tools: `sales_enable`, `sales_enable_request`, `sales_enable_requests_list`, `sales_start_steps`, `sales_project_links_list`, `sales_project_links_update`
+- Tools: `sales_enable`, `sales_enable_request`, `sales_enable_requests_list`, `sales_start_steps`, `sales_project_links_list`, `sales_project_links_update`, `sales_inbound_update`
 - Guides: `sales/overview`, `sales/growth-intelligence`
 - Safety: Switch the Sales Engine on, send a request or change project links only after the user confirmed; name the projects you change.
 - Safety: Unlinking a project stops new contacts from its leads and the status report back to Growth Intelligence; existing contacts stay.
