@@ -161,9 +161,9 @@ Several client projects at a glance; client connect links.
 
 ## C21 – Keys, team, audit (Schlüssel, Team, Protokoll)
 
-API and site keys, members, the audit log and MCP call history; logos of organizations and projects (shown in the switchers of both products and the X3 App).
+API and site keys, members, the audit log and MCP call history; logos of organizations and projects (shown in the switchers of both products and the X3 App); the connected person's own profile picture.
 
-- Tools: `keys_list`, `keys_create`, `keys_roll`, `keys_revoke`, `publishable_keys_list`, `publishable_keys_create`, `publishable_keys_roll`, `publishable_keys_revoke`, `members_list`, `audit_list`, `mcp_calls_list`, `org_logo_set`, `org_logo_remove`, `project_logo_set`, `project_logo_remove`
+- Tools: `keys_list`, `keys_create`, `keys_roll`, `keys_revoke`, `publishable_keys_list`, `publishable_keys_create`, `publishable_keys_roll`, `publishable_keys_revoke`, `members_list`, `audit_list`, `mcp_calls_list`, `org_logo_set`, `org_logo_remove`, `project_logo_set`, `project_logo_remove`, `profile_avatar_set`, `profile_avatar_remove`
 - Guides: `api/authentication`
 - Safety: Secret and proxy keys are created by the user; never print, log or commit them.
 
