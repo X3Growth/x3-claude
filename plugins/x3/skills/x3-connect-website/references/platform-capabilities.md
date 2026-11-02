@@ -367,7 +367,7 @@ The organization's plan, limits, this month's usage, locked features and the che
 
 - Tools: `billing_usage`, `billing_plans`
 - Guides: `concepts/plans-limits`
-- Safety: Read-only: plan changes, payment and cancellation only in the dashboard (Einstellungen › Abo & Nutzung).
+- Safety: Read-only: plan changes, payment and cancellation only in the dashboard (Kunden & Team › Abo & Nutzung).
 
 ## C28 – Visitors: traffic, quality, return (Besucher: Traffic, Qualität, Wiederkehr)
 
