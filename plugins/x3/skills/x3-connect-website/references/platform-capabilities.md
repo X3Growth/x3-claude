@@ -255,7 +255,7 @@ Tasks of the Sales Engine (id sales_tasks): what is overdue, due today or upcomi
 
 Contact lists of the Sales Engine (id sales_lists): static lists (from a selection, a CSV import or by hand) and dynamic lists with rules (AND/OR groups, relative dates, custom and company fields, lead kind); how many members each has and how many are due; test rules with a live count before creating a list, add contacts to a static list, set a list's default call script („Leitfaden“) for calling from it.
 
-- Tools: `sales_lists_list`, `sales_lists_preview`, `sales_lists_create`, `sales_lists_update`, `sales_lists_add_members`
+- Tools: `sales_lists_list`, `sales_lists_preview`, `sales_lists_create`, `sales_lists_update`, `sales_lists_add_members`, `sales_lists_delete`
 - Guides: `sales/lists`, `sales/import-export`, `sales/do-not-contact`
 - Safety: Preview first: show the user the count and the rule sentence of sales_lists_preview before creating a dynamic list.
 - Safety: Creating or changing a list or adding members only after the user confirmed; there is no delete over MCP.
@@ -321,7 +321,7 @@ Deals of the Sales Engine (id sales_deals): pipelines with stages, deals per sta
 
 Calls of the Sales Engine (id sales_calling): log a call a person made with its outcome (Nicht erreicht, Mailbox, Gatekeeper, Entscheider erreicht with callback or info mail, Termin vereinbart, Nicht qualifiziert, Falsche Nummer, Nicht mehr anrufen); the outcome sets the lead status, the follow-up call task, the attempts, an invalid number or the do-not-contact list. Calling Sessions: list them with their status and numbers and cancel one without a summary („Session abbrechen“: calls stay, open contacts stay in their list, locks are freed; undo sets it back to paused); calling itself runs in the Sales app. Call scripts (Gesprächsleitfäden): list, create, change and archive them with headings, paragraphs, ticking talking points, placeholders and qualification questions on custom contact fields.
 
-- Tools: `calls_log`, `sales_calling_sessions_list`, `sales_calling_session_cancel`, `sales_scripts_list`, `sales_scripts_create`, `sales_scripts_update`, `sales_scripts_delete`
+- Tools: `calls_log`, `sales_calling_preview`, `sales_calling_sessions_list`, `sales_calling_session_cancel`, `sales_scripts_list`, `sales_scripts_create`, `sales_scripts_update`, `sales_scripts_delete`
 - Guides: `sales/calling`
 - Safety: Log only calls that happened, with the outcome and note the user names; ask before writing.
 - Safety: Cancel a Calling Session only on the user's word and name it first; own sessions only unless the user leads the team.
@@ -333,7 +333,7 @@ Calls of the Sales Engine (id sales_calling): log a call a person made with its 
 
 Switching the Sales Engine on (id sales_start): admins switch it on with the standard pipeline and call outcomes, members ask their admins for it (bell and mail), admins read the open requests and the start steps on Heute (only switching on is required: skip a step, work alone, hide the checklist); and per Growth Intelligence project whether its leads become contacts, whether status and revenue go back and which round robin team gets them (sales_gi_status_sync sends status and reason of linked contacts to Growth Intelligence again), for one project, several or all at once. Follow-up rules (Folge-Aufgaben): per project and form a task N days later at a time of day (fixed person, setter or distribution), a static list, once per contact, optionally without the first call within minutes; a preview shows what a lead gets.
 
-- Tools: `sales_enable`, `sales_enable_request`, `sales_enable_requests_list`, `sales_start_steps`, `sales_project_links_list`, `sales_project_links_update`, `sales_inbound_update`, `sales_inbound_rules_list`, `sales_inbound_rules_upsert`, `sales_inbound_rules_delete`, `sales_inbound_rules_preview`, `sales_gi_status_sync`
+- Tools: `sales_enable`, `sales_enable_request`, `sales_enable_requests_list`, `sales_start_steps`, `sales_project_links_list`, `sales_project_links_update`, `sales_gi_backfill`, `sales_inbound_update`, `sales_inbound_rules_list`, `sales_inbound_rules_upsert`, `sales_inbound_rules_delete`, `sales_inbound_rules_preview`, `sales_gi_status_sync`
 - Guides: `sales/overview`, `sales/growth-intelligence`, `sales/inbound-rules`
 - Safety: Switch the Sales Engine on, send a request or change project links only after the user confirmed; name the projects you change.
 - Safety: Once on, the Sales Engine stays on: no tool switches it off (409 sales_cannot_disable); tell the user before switching on, and to keep a person out remove their Sales role (sales_team_set_role with role null).
