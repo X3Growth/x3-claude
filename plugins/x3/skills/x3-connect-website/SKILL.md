@@ -5,7 +5,7 @@ license: MIT
 compatibility: Works best with the X3 MCP server connected (https://api.x3growth.io/mcp). Installing code needs file access to the website repository (Claude Code, Cowork or a code-capable environment); without it, Claude produces the exact snippets for the user to paste.
 metadata:
   author: X3Growth
-  version: "1.2.0"
+  version: "1.2.1"
   homepage: https://intelligence.x3growth.io
   docs: https://api.x3growth.io/llms.txt
 ---
