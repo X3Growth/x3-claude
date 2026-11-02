@@ -253,12 +253,12 @@ Tasks of the Sales Engine (id sales_tasks): what is overdue, due today or upcomi
 
 ## C33 – Sales Engine: lists (Sales Engine: Listen)
 
-Contact lists of the Sales Engine (id sales_lists): static lists (from a selection, a CSV import or by hand) and dynamic lists with rules (AND/OR groups, relative dates, custom and company fields, lead kind); how many members each has and how many are due; test rules with a live count before creating a list, add contacts to a static list.
+Contact lists of the Sales Engine (id sales_lists): static lists (from a selection, a CSV import or by hand) and dynamic lists with rules (AND/OR groups, relative dates, custom and company fields, lead kind); how many members each has and how many are due; test rules with a live count before creating a list, add contacts to a static list, set a list's default call script („Leitfaden“) for calling from it.
 
-- Tools: `sales_lists_list`, `sales_lists_preview`, `sales_lists_create`, `sales_lists_add_members`
+- Tools: `sales_lists_list`, `sales_lists_preview`, `sales_lists_create`, `sales_lists_update`, `sales_lists_add_members`
 - Guides: `sales/lists`, `sales/import-export`, `sales/do-not-contact`
 - Safety: Preview first: show the user the count and the rule sentence of sales_lists_preview before creating a dynamic list.
-- Safety: Creating a list or adding members only after the user confirmed; there is no delete over MCP.
+- Safety: Creating or changing a list or adding members only after the user confirmed; there is no delete over MCP.
 - Safety: Contacts on the do-not-contact list stay in lists but must not be called or mailed; never suggest working around the block.
 
 ## C37 – Sales Engine: mail templates and drafts (Sales Engine: E-Mail-Vorlagen & Entwürfe)
