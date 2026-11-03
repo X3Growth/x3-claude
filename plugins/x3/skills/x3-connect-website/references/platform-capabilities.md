@@ -97,7 +97,7 @@ Answering questions about traffic, pages, sessions, videos, downloads, 404s; SQL
 
 Spend, CPC, CPM, cost per relevant session, CPL, ROAS and the key figures per row (visitors, click to visit, interested and hot share, lead rate, interested/hot to lead, contact attempts, cost per hot visit – guide `ads/cost-kpis`); UTM templates; mapping rules – read-only analysis.
 
-- Tools: `ads_performance`, `ads_timeseries`, `ads_unmatched`, `ads_unmatched_diagnosis`, `ads_url_suffix_set`, `ads_accounts_list`, `ads_connections_list`, `ads_accounts_select`, `ads_sync_status`, `ads_sync_run`, `ads_mapping_rules_list`, `ads_mapping_rules_create`, `ads_mapping_rules_delete`, `ads_utm_templates`, `ad_preview`, `ads_unknown_campaigns_list`, `ads_manual_entities_list`, `ads_manual_entities_upsert`, `ads_manual_entities_delete`, `ads_campaign_scope_list`, `ads_campaign_scope_get`, `ads_campaign_scope_set`
+- Tools: `ads_performance`, `ads_timeseries`, `ads_unmatched`, `ads_unmatched_diagnosis`, `ads_url_suffix_set`, `ads_accounts_list`, `ads_connections_list`, `ads_connection_status`, `ads_accounts_select`, `ads_sync_status`, `ads_sync_run`, `ads_mapping_rules_list`, `ads_mapping_rules_create`, `ads_mapping_rules_delete`, `ads_utm_templates`, `ad_preview`, `ads_unknown_campaigns_list`, `ads_manual_entities_list`, `ads_manual_entities_upsert`, `ads_manual_entities_delete`, `ads_campaign_scope_list`, `ads_campaign_scope_get`, `ads_campaign_scope_set`
 - Prompts: `campaign_review`
 - Guides: `ads`, `concepts/ad-costs`, `ads/utm-templates`, `ads/matching`, `ads/campaign-selection`, `ads/delivery-status`
 - Workflow: `references/ads-and-dashboard.md`
