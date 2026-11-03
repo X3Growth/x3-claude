@@ -325,7 +325,7 @@ Deals of the Sales Engine (id sales_deals): pipelines with stages, deals per sta
 
 Calls of the Sales Engine (id sales_calling): log a call a person made with its outcome (Nicht erreicht, Mailbox, Gatekeeper, Entscheider erreicht with callback or info mail, Termin vereinbart, Nicht qualifiziert, Falsche Nummer, Nicht mehr anrufen); the outcome sets the lead status, the follow-up call task, the attempts, an invalid number or the do-not-contact list. Calling Sessions: list them with their status and numbers and cancel one without a summary („Session abbrechen“: calls stay, open contacts stay in their list, locks are freed; undo sets it back to paused); calling itself runs in the Sales app. Call scripts (Gesprächsleitfäden): list, create, change and archive them with headings, paragraphs, ticking talking points, placeholders and qualification questions on custom contact fields.
 
-- Tools: `calls_log`, `sales_calling_preview`, `sales_calling_sessions_list`, `sales_calling_session_cancel`, `sales_scripts_list`, `sales_scripts_create`, `sales_scripts_update`, `sales_scripts_delete`
+- Tools: `calls_log`, `sales_calling_preview`, `sales_calling_sessions_list`, `sales_calling_session_cancel`, `sales_calling_session_create`, `sales_calling_session_update`, `calls_undo`, `appointments_calendar_matches`, `sales_scripts_list`, `sales_scripts_create`, `sales_scripts_update`, `sales_scripts_delete`
 - Guides: `sales/calling`
 - Safety: Log only calls that happened, with the outcome and note the user names; ask before writing.
 - Safety: Cancel a Calling Session only on the user's word and name it first; own sessions only unless the user leads the team.
