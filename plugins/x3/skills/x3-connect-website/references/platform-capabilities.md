@@ -196,7 +196,7 @@ A/B tests of anything on the website: plan honestly, implement both arms with SD
 
 Leads go to X3, X3 pushes them to the connected CRMs (dedupe first, spam held back) and reads meetings and won deals back: status Termin/Kunde, revenue, real ROAS by lead cohort.
 
-- Tools: `crm_connections_list`, `crm_connect_start`, `crm_sync_status`, `crm_sync_run`, `crm_lead_status`, `crm_lead_push`, `crm_lead_link`, `crm_lead_unlink`, `crm_search`, `crm_reviews_list`, `crm_review_resolve`, `crm_mappings_get`, `crm_mappings_update`, `crm_routing_rules_list`, `crm_routing_rules_upsert`, `crm_settings_update`, `crm_connection_update`, `leads_update`
+- Tools: `crm_connections_list`, `crm_connect_start`, `crm_sync_status`, `crm_sync_run`, `crm_lead_status`, `crm_lead_sales_import`, `crm_lead_push`, `crm_lead_link`, `crm_lead_unlink`, `crm_search`, `crm_reviews_list`, `crm_review_resolve`, `crm_mappings_get`, `crm_mappings_update`, `crm_routing_rules_list`, `crm_routing_rules_upsert`, `crm_settings_update`, `crm_connection_update`, `leads_update`
 - Guides: `crm/overview`, `crm/hubspot`, `crm/pipedrive`, `sdk/lead`, `insights/real-roas`
 - Safety: Websites send leads to X3 only – never call the CRM API from the site.
 - Safety: crm_lead_push defaults to dry_run; push, link, unlink and review decisions only after the user confirmed.
