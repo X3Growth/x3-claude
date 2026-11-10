@@ -206,7 +206,7 @@ Leads go to X3, X3 pushes them to the connected CRMs (dedupe first, spam held ba
 
 Hand events to other systems (signed webhooks for new leads, status changes, conversions, decided experiments, with filters and a delivery log) and receive Meta Instant Form (Lead Ads) leads as X3 leads with tag and target project.
 
-- Tools: `webhooks_list`, `webhooks_create`, `webhooks_update`, `webhooks_delete`, `webhooks_test`, `webhooks_deliveries`, `webhooks_redeliver`, `instant_forms_status`, `instant_forms_pages_list`, `instant_forms_resubscribe`, `instant_forms_own_app_get`, `instant_forms_own_app_update`, `instant_forms_list`, `instant_forms_update`, `instant_forms_sync`, `instant_forms_simulate`
+- Tools: `webhooks_list`, `webhooks_create`, `webhooks_update`, `webhooks_delete`, `webhooks_test`, `webhooks_deliveries`, `webhooks_redeliver`, `instant_forms_status`, `instant_forms_pages_list`, `instant_forms_resubscribe`, `instant_forms_own_app_get`, `instant_forms_own_app_update`, `instant_forms_list`, `instant_forms_update`, `instant_forms_meta_ads_list`, `instant_forms_meta_ads_connect`, `instant_forms_sync`, `instant_forms_simulate`
 - Guides: `api/webhooks`, `ads/meta-instant-forms`
 - Safety: Webhooks with contact data send personal data to another system: only with the user's explicit OK and a receiver the user controls; the signing secret goes into the receiver's secret store, never into chat logs or repositories.
 - Safety: Instant Form leads are never reported to ad platforms (Meta counts them itself) – do not mark them as conversions by hand.
