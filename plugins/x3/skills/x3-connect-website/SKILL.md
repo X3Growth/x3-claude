@@ -92,7 +92,7 @@ What does the user want? Pick the part of this skill first:
 | to change what recordings mask | Phase J |
 | leads into their CRM, CRM revenue back (real ROAS) | Phase K, `references/platform-capabilities.md` (C25) |
 | to connect an iOS or Android app (Swift, Kotlin, React Native/Expo, Flutter), app installs, store purchases | `references/apps.md` (not Phases A–K) |
-| to set up the Sales Engine (CRM): pipeline, lead status, call outcomes, script, templates, booking link, contacts, team | Phase L, `references/sales-setup.md` (not Phases A–K) |
+| the Sales Engine (CRM: contacts, deals, tasks, its setup) or X3 Automation | their own MCP servers `x3-sales` and `x3-automation` (in this plugin); tool names of the Sales Engine on `x3` only answer with that hint |
 
 Work through the phases in order; skip a phase only when `setup_status` says it is done or the user
 declines it. Confirm with the user before every write to X3 (project, config, goals, presets,
@@ -226,8 +226,9 @@ side effects, start (`experiments_start`) only after the user deployed and the c
   the scope (`relax`: `all` | `test`) and the never-switchable floor. Guide `behavior/recordings#masking`.
 - Recommend the X3 default (marketing sites: page texts visible with PII filter, everything else
   masked; sector presets: shapes only). For QA of forms or quizzes suggest `relax: "test"` instead of
-  relaxing for everyone: only visits with the project's test parameter, `test: true` in the snippet
-  (signed-in staff) or devices opened once with `?x3_internal=1` get the relaxed values.
+  relaxing for everyone: only visits with `test: true` in the snippet (signed-in staff) or devices marked
+  with the dashboard's signed link „Gerät als intern markieren“ get the relaxed values (the test parameter
+  counts a visit as test traffic but never relaxes the masking).
 - Change it with `behavior_masking_update` (project admin). An option less strict than the recommendation
   needs `acknowledge: [{ category, text, confirmed: true }]` – explain the risk and **only confirm after
   the human admin explicitly agreed**; it is stored with their name and time in the audit log. Never
@@ -259,15 +260,6 @@ wants CRM revenue in X3 (guides `crm/overview`, `sdk/lead`, `insights/real-roas`
   them on (`crm_settings_update`).
 - **Dubletten prüfen.** `crm_reviews_list` → show the candidates → `crm_review_resolve` only after the
   user chose. `crm_lead_push` defaults to a dry run; push, link and unlink only after an OK.
-
-### Phase L – Sales Engine einrichten (CRM, only when asked)
-When the user wants the X3 Sales Engine set up for their business („Richte die Sales Engine für mich ein“, the task
-from Einstellungen › KI & Agents): follow `references/sales-setup.md`. In short: `setup_session_start` with
-`product: "sales"` and `org` (the person watches every step live) → `sales_setup_guide` (what exists, whether you hold
-`sales:admin`) → ask about the business → propose and, after an OK each, create pipeline and stages, lead status
-labels, call outcomes, a call script, two or three mail templates and a booking link → contacts from a CSV or the
-mailbox and team invitations only as `sales_setup_propose` (the person applies them) → `setup_session_finish` with a
-summary. No Sales tools at all: `auth_whoami` and its `fix` (kb `sales-mcp-no-tools`).
 
 ## 5. Safety rules (always)
 

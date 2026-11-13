@@ -3,6 +3,14 @@
     "x3": {
       "type": "http",
       "url": "https://api.x3growth.io/mcp"
+    },
+    "x3-sales": {
+      "type": "http",
+      "url": "https://api.crm.x3growth.io/mcp"
+    },
+    "x3-automation": {
+      "type": "http",
+      "url": "https://api.automation.x3growth.io/mcp"
     }
   }
 }
