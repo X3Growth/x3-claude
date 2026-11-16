@@ -2,7 +2,7 @@
 name: x3-connect-website
 description: Connects, operates and analyses X3 Growth Intelligence (cookieless first-party analytics, ad-cost attribution, server-side conversions, A/B experiments) end to end - creates the project, installs the SDK or script tag (Next.js, React, Astro, HTML, WordPress, Shopify, Webflow, Google Tag Manager, others), wires the cookie banner, tracks forms, bookings, WhatsApp/phone/mail clicks, quizzes, CTAs and videos, adds server-side leads and conversions, verifies the data, sets up goals and presets, answers analysis questions, and plans, implements, runs and cleans up A/B experiments honestly. Use when the user wants to install, connect, fix or verify X3 / x3growth tracking, asks a question about their X3 data, wants to test something on the website ("teste, ob ...", A/B test), or something in X3 does not work (an error message, a missing push, a conversion not reported) - then it looks the problem up in the X3 knowledge base (kb_search) and follows its steps.
 license: MIT
-compatibility: Works best with the X3 MCP server connected (https://api.x3growth.io/mcp). Installing code needs file access to the website repository (Claude Code, Cowork or a code-capable environment); without it, Claude produces the exact snippets for the user to paste.
+compatibility: Works best with the X3 MCP server connected (https://mcp.x3growth.io/mcp). Installing code needs file access to the website repository (Claude Code, Cowork or a code-capable environment); without it, Claude produces the exact snippets for the user to paste.
 metadata:
   author: X3Growth
   version: "1.2.1"
@@ -92,7 +92,7 @@ What does the user want? Pick the part of this skill first:
 | to change what recordings mask | Phase J |
 | leads into their CRM, CRM revenue back (real ROAS) | Phase K, `references/platform-capabilities.md` (C25) |
 | to connect an iOS or Android app (Swift, Kotlin, React Native/Expo, Flutter), app installs, store purchases | `references/apps.md` (not Phases A–K) |
-| the Sales Engine (CRM: contacts, deals, tasks, its setup) or X3 Automation | their own MCP servers `x3-sales` and `x3-automation` (in this plugin); tool names of the Sales Engine on `x3` only answer with that hint |
+| the Sales Engine (CRM: contacts, deals, tasks, its setup) or X3 Automation | their tools on the same server `x3` (one connection for every X3 product; `x3_products` shows which products it reaches) |
 
 Work through the phases in order; skip a phase only when `setup_status` says it is done or the user
 declines it. Confirm with the user before every write to X3 (project, config, goals, presets,
