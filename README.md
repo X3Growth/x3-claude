@@ -45,6 +45,15 @@ Sign in to the X3 server with `/mcp`. Run the skill with `/x3:x3-connect-website
 If you already added the X3 server manually (`claude mcp add … x3 …`), remove one of the two
 (`claude mcp remove x3`) so the tools are not listed twice.
 
+### One connector for every X3 product
+
+Since version 1.4.0 the plugin brings exactly one MCP server, **x3** (`https://mcp.x3growth.io/mcp`), with the
+tools of Growth Intelligence, the Sales Engine and X3 Automation after one sign-in. The former servers
+`x3-sales` and `x3-automation` are gone; after updating the plugin, sign in to **x3** once more (`/mcp`) so
+X3 Automation is included. Connected the older connector **X3 Growth Intelligence**
+(`https://api.x3growth.io/mcp`) as well? It keeps working, but keep only one: remove
+**X3 Growth Intelligence** in Claude's connector settings, otherwise every tool is loaded twice.
+
 ### Only the X3 connector?
 
 Connector users get the same guidance without installing anything: the X3 MCP server offers the prompt
@@ -58,6 +67,10 @@ same prompt, the skill files and the docs tools.
   `X3Growth/x3-claude` → Plugin **x3** installieren → im Tab *Connectors* **x3** verbinden.
 - **Claude Code:** `claude plugin marketplace add X3Growth/x3-claude` und `claude plugin install x3@x3growth`,
   dann `/mcp` zum Anmelden.
+- **Ein Connector für alle X3-Produkte:** Das Plugin bringt ab Version 1.4.0 genau einen Server **x3**
+  (`https://mcp.x3growth.io/mcp`) mit den Werkzeugen von Growth Intelligence, Sales Engine und X3 Automation.
+  Nach dem Update einmal neu bei **x3** anmelden. Ist zusätzlich der ältere Connector **X3 Growth Intelligence**
+  verbunden, entferne ihn in den Connector-Einstellungen von Claude, sonst lädt Claude jedes Werkzeug doppelt.
 - Danach einfach schreiben: „Verbinde meine Website mit X3." Claude richtet Projekt, Tracking, Cookie-Banner,
   Events, Server-Conversions, Ziele und Presets ein und prüft, ob Daten ankommen. Werbekonten verbindet
   Claude nur, wenn du das ausdrücklich möchtest – und ändert dort nie etwas.
